@@ -3,6 +3,8 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Item-->
@@ -26,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="1899" y="671"/>
         </scene>
-        <!--View Controller-->
+        <!--Timer View Controller-->
         <scene sceneID="Sza-AO-loO">
             <objects>
-                <viewController id="Rb5-ej-vQ5" sceneMemberID="viewController">
+                <viewController id="Rb5-ej-vQ5" customClass="TimerViewController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uXa-Ya-51C"/>
                         <viewControllerLayoutGuide type="bottom" id="fGQ-tH-0Kt"/>
@@ -42,18 +44,22 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="2"/>
                                 <animations/>
                             </progressView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ogp-24-Rq4">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ogp-24-Rq4" userLabel="hourPicker">
                                 <rect key="frame" x="0.0" y="64" width="104" height="229"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="104" id="2cY-os-RKV"/>
+                                    <constraint firstAttribute="width" constant="104" id="046-qL-0dw"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rb5-ej-vQ5" id="RT2-yj-bSa"/>
+                                    <outlet property="delegate" destination="Rb5-ej-vQ5" id="3hZ-8B-rYg"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kg1-eB-pKc">
                                 <rect key="frame" x="283" y="168" width="46" height="21"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="SI0-pY-cAm"/>
+                                    <constraint firstAttribute="width" constant="46" id="oQc-qA-rtb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -63,42 +69,101 @@
                                 <rect key="frame" x="112" y="168" width="46" height="21"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="HIX-g9-PxD"/>
+                                    <constraint firstAttribute="height" constant="21" id="afa-i9-xfW"/>
+                                    <constraint firstAttribute="width" constant="46" id="d4f-N6-ctt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yh0-s1-L7c">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yh0-s1-L7c" userLabel="minPicker">
                                 <rect key="frame" x="171" y="64" width="104" height="229"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="104" id="iCu-w8-GcF"/>
-                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rb5-ej-vQ5" id="eMj-2b-plf"/>
+                                    <outlet property="delegate" destination="Rb5-ej-vQ5" id="OX5-6K-Eq5"/>
+                                </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qw-kd-igX">
+                                <rect key="frame" x="245" y="444" width="75" height="75"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="Zzc-Xr-peg"/>
+                                </constraints>
+                                <state key="normal" title="Start"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="Rb5-ej-vQ5" eventType="touchUpInside" id="9g1-cW-QNi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01z-di-Vrk">
+                                <rect key="frame" x="0.0" y="444" width="75" height="75"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="kOz-gi-1zw"/>
+                                    <constraint firstAttribute="width" constant="75" id="mFT-7g-GDa"/>
+                                </constraints>
+                                <state key="normal" title="Pause"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pauseButton:" destination="Rb5-ej-vQ5" eventType="touchUpInside" id="tHk-VY-oh6"/>
+                                    <action selector="pauseButtonPressed:" destination="Rb5-ej-vQ5" eventType="touchUpInside" id="ljB-iZ-xLD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer Countdown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6G-cn-uvv">
+                                <rect key="frame" x="0.0" y="72" width="320" height="186"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="31"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Yh0-s1-L7c" firstAttribute="centerY" secondItem="Kg1-eB-pKc" secondAttribute="centerY" id="3EK-Xq-GDP"/>
-                            <constraint firstItem="Yh0-s1-L7c" firstAttribute="bottom" secondItem="Ogp-24-Rq4" secondAttribute="bottom" id="DlM-Me-ZgW"/>
-                            <constraint firstItem="jcV-yP-7lj" firstAttribute="firstBaseline" secondItem="Kg1-eB-pKc" secondAttribute="firstBaseline" id="Fna-F1-kio"/>
-                            <constraint firstItem="Rgc-vj-Eq7" firstAttribute="top" secondItem="Ogp-24-Rq4" secondAttribute="top" id="FwN-FE-6Ku"/>
-                            <constraint firstItem="Ogp-24-Rq4" firstAttribute="leading" secondItem="Rgc-vj-Eq7" secondAttribute="leading" id="J9e-rr-QIW"/>
-                            <constraint firstItem="Rgc-vj-Eq7" firstAttribute="top" secondItem="uXa-Ya-51C" secondAttribute="bottom" id="Owr-cc-2jL"/>
-                            <constraint firstItem="fGQ-tH-0Kt" firstAttribute="top" secondItem="Ogp-24-Rq4" secondAttribute="bottom" constant="226" id="S5A-5f-1Cz"/>
-                            <constraint firstItem="Kg1-eB-pKc" firstAttribute="leading" secondItem="Yh0-s1-L7c" secondAttribute="trailing" constant="8" symbolic="YES" id="Teh-uY-a0Z"/>
-                            <constraint firstItem="Ogp-24-Rq4" firstAttribute="top" secondItem="Yh0-s1-L7c" secondAttribute="top" id="abz-zU-hTC"/>
-                            <constraint firstAttribute="trailing" secondItem="Kg1-eB-pKc" secondAttribute="trailing" constant="-9" id="cZF-wf-QKu"/>
-                            <constraint firstItem="fGQ-tH-0Kt" firstAttribute="top" secondItem="jcV-yP-7lj" secondAttribute="bottom" constant="330" id="hHI-xY-ix6"/>
-                            <constraint firstItem="Rgc-vj-Eq7" firstAttribute="trailing" secondItem="Kg1-eB-pKc" secondAttribute="trailing" constant="-9" id="jjv-E7-s3K"/>
-                            <constraint firstItem="Kg1-eB-pKc" firstAttribute="baseline" secondItem="jcV-yP-7lj" secondAttribute="baseline" id="lIb-Q3-wHr"/>
-                            <constraint firstItem="jcV-yP-7lj" firstAttribute="leading" secondItem="Ogp-24-Rq4" secondAttribute="trailing" constant="8" symbolic="YES" id="mWf-rw-lFt"/>
-                            <constraint firstItem="Ogp-24-Rq4" firstAttribute="leading" secondItem="T1L-lq-dQR" secondAttribute="leading" id="wsd-W2-Fl5"/>
+                            <constraint firstItem="5qw-kd-igX" firstAttribute="bottom" secondItem="fGQ-tH-0Kt" secondAttribute="top" id="6IL-a2-yHl"/>
+                            <constraint firstItem="Ogp-24-Rq4" firstAttribute="top" secondItem="Rgc-vj-Eq7" secondAttribute="top" id="ESK-Qr-pUO"/>
+                            <constraint firstItem="Yh0-s1-L7c" firstAttribute="top" secondItem="Ogp-24-Rq4" secondAttribute="top" id="I1T-Kc-Wc1"/>
+                            <constraint firstItem="Yh0-s1-L7c" firstAttribute="bottom" secondItem="Ogp-24-Rq4" secondAttribute="bottom" id="Jmb-K2-gly"/>
+                            <constraint firstItem="01z-di-Vrk" firstAttribute="top" secondItem="5qw-kd-igX" secondAttribute="top" id="KNH-Bs-7yL"/>
+                            <constraint firstItem="Yh0-s1-L7c" firstAttribute="leading" secondItem="jcV-yP-7lj" secondAttribute="trailing" constant="13" id="KkC-CO-WuU"/>
+                            <constraint firstItem="jcV-yP-7lj" firstAttribute="centerY" secondItem="Ogp-24-Rq4" secondAttribute="centerY" id="MHm-Ce-Qet"/>
+                            <constraint firstItem="01z-di-Vrk" firstAttribute="leading" secondItem="Rgc-vj-Eq7" secondAttribute="leading" id="OYz-JJ-2GE"/>
+                            <constraint firstItem="Ogp-24-Rq4" firstAttribute="top" secondItem="uXa-Ya-51C" secondAttribute="bottom" id="QLM-NG-eru"/>
+                            <constraint firstItem="Rgc-vj-Eq7" firstAttribute="leading" secondItem="T1L-lq-dQR" secondAttribute="leading" id="Qnj-ml-JNv"/>
+                            <constraint firstItem="Kg1-eB-pKc" firstAttribute="leading" secondItem="Yh0-s1-L7c" secondAttribute="trailing" constant="8" symbolic="YES" id="RNB-na-de2"/>
+                            <constraint firstItem="fGQ-tH-0Kt" firstAttribute="top" secondItem="jcV-yP-7lj" secondAttribute="bottom" constant="330" id="Rxs-vF-7lB"/>
+                            <constraint firstItem="jcV-yP-7lj" firstAttribute="firstBaseline" secondItem="Kg1-eB-pKc" secondAttribute="firstBaseline" id="SPc-rP-Liy"/>
+                            <constraint firstItem="5qw-kd-igX" firstAttribute="baseline" secondItem="01z-di-Vrk" secondAttribute="firstBaseline" id="XPA-BT-evy"/>
+                            <constraint firstItem="jcV-yP-7lj" firstAttribute="baseline" secondItem="Kg1-eB-pKc" secondAttribute="baseline" id="aI4-iq-EFZ"/>
+                            <constraint firstItem="01z-di-Vrk" firstAttribute="baseline" secondItem="5qw-kd-igX" secondAttribute="firstBaseline" id="biH-5G-90X"/>
+                            <constraint firstAttribute="trailing" secondItem="Rgc-vj-Eq7" secondAttribute="trailing" id="jNp-e4-ACi"/>
+                            <constraint firstItem="Ogp-24-Rq4" firstAttribute="leading" secondItem="Rgc-vj-Eq7" secondAttribute="leading" id="k2X-Vl-r5V"/>
+                            <constraint firstItem="jcV-yP-7lj" firstAttribute="leading" secondItem="Ogp-24-Rq4" secondAttribute="trailing" constant="8" symbolic="YES" id="kOp-g9-2RP"/>
+                            <constraint firstItem="5qw-kd-igX" firstAttribute="trailing" secondItem="Rgc-vj-Eq7" secondAttribute="trailing" id="sil-Li-UGe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kg1-eB-pKc" secondAttribute="trailing" constant="-25" id="y6t-Nl-8Yh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zgE-Iq-7fj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="hourPickerView" destination="Ogp-24-Rq4" id="jVN-rf-DwE"/>
+                        <outlet property="minutePickerView" destination="Yh0-s1-L7c" id="rVo-mK-VF2"/>
+                        <outlet property="pauseButton" destination="01z-di-Vrk" id="eBt-pC-EcM"/>
+                        <outlet property="progressView" destination="Rgc-vj-Eq7" id="kL6-4Z-Buq"/>
+                        <outlet property="startButton" destination="5qw-kd-igX" id="BP0-wb-ZBy"/>
+                        <outlet property="timerLabel" destination="n6G-cn-uvv" id="15L-N7-78t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MeU-le-UFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
