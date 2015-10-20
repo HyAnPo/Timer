@@ -10,8 +10,8 @@ import UIKit
 
 class Timer: NSObject {
     
-    static let TimerSecondTickNotification = "TimerSecondTickNotification"
-    static let TimerCompleteNotification = "TimerCompleteNotification"
+    let TimerSecondTickNotification = "TimerSecondTickNotification"
+    let TimerCompleteNotification = "TimerCompleteNotification"
     
     private(set) var seconds = NSTimeInterval(0)
     private(set) var totalSeconds = NSTimeInterval(0)
@@ -54,12 +54,22 @@ class Timer: NSObject {
     func secondTick() {
         if timer != nil {
             seconds--
-            NSNotificationCenter.defaultCenter().postNotificationName(<#T##aName: String##String#>, object: <#T##AnyObject?#>, userInfo: <#T##[NSObject : AnyObject]?#>)
+            NSNotificationCenter.defaultCenter().postNotificationName(TimerSecondTickNotification, object: self)
+            if timer == 0 {
+                NSNotificationCenter.defaultCenter().postNotificationName(TimerCompleteNotification, object: self)
+                stopTimer()
+            }
         }
         
     }
 
     func timerString() -> String {
+        
+        let totalSeconds = Int(self.seconds)
+        
+        let hours = totalSeconds / 3600
+        let minutes = (totalSeconds - (hours * 3600)) / 60
+        let seconds = totalSeconds - (hours * 3600) - (minutes * 60)
         
         return ""
     }
