@@ -1,7 +1,127 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NOl-BW-Wwp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="vx1-CK-vsw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FTe-xX-2zP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="RYv-a4-1vY"/>
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2ZG-yJ-hfF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Rb5-ej-vQ5" kind="relationship" relationship="rootViewController" id="wpl-EJ-u70"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JaQ-jj-PkH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1899" y="671"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Sza-AO-loO">
+            <objects>
+                <viewController id="Rb5-ej-vQ5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uXa-Ya-51C"/>
+                        <viewControllerLayoutGuide type="bottom" id="fGQ-tH-0Kt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T1L-lq-dQR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rgc-vj-Eq7">
+                                <rect key="frame" x="0.0" y="64" width="320" height="2"/>
+                                <animations/>
+                            </progressView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ogp-24-Rq4">
+                                <rect key="frame" x="0.0" y="64" width="104" height="229"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="2cY-os-RKV"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kg1-eB-pKc">
+                                <rect key="frame" x="283" y="168" width="46" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="SI0-pY-cAm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcV-yP-7lj">
+                                <rect key="frame" x="112" y="168" width="46" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="HIX-g9-PxD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yh0-s1-L7c">
+                                <rect key="frame" x="171" y="64" width="104" height="229"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="iCu-w8-GcF"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yh0-s1-L7c" firstAttribute="centerY" secondItem="Kg1-eB-pKc" secondAttribute="centerY" id="3EK-Xq-GDP"/>
+                            <constraint firstItem="Yh0-s1-L7c" firstAttribute="bottom" secondItem="Ogp-24-Rq4" secondAttribute="bottom" id="DlM-Me-ZgW"/>
+                            <constraint firstItem="jcV-yP-7lj" firstAttribute="firstBaseline" secondItem="Kg1-eB-pKc" secondAttribute="firstBaseline" id="Fna-F1-kio"/>
+                            <constraint firstItem="Rgc-vj-Eq7" firstAttribute="top" secondItem="Ogp-24-Rq4" secondAttribute="top" id="FwN-FE-6Ku"/>
+                            <constraint firstItem="Ogp-24-Rq4" firstAttribute="leading" secondItem="Rgc-vj-Eq7" secondAttribute="leading" id="J9e-rr-QIW"/>
+                            <constraint firstItem="Rgc-vj-Eq7" firstAttribute="top" secondItem="uXa-Ya-51C" secondAttribute="bottom" id="Owr-cc-2jL"/>
+                            <constraint firstItem="fGQ-tH-0Kt" firstAttribute="top" secondItem="Ogp-24-Rq4" secondAttribute="bottom" constant="226" id="S5A-5f-1Cz"/>
+                            <constraint firstItem="Kg1-eB-pKc" firstAttribute="leading" secondItem="Yh0-s1-L7c" secondAttribute="trailing" constant="8" symbolic="YES" id="Teh-uY-a0Z"/>
+                            <constraint firstItem="Ogp-24-Rq4" firstAttribute="top" secondItem="Yh0-s1-L7c" secondAttribute="top" id="abz-zU-hTC"/>
+                            <constraint firstAttribute="trailing" secondItem="Kg1-eB-pKc" secondAttribute="trailing" constant="-9" id="cZF-wf-QKu"/>
+                            <constraint firstItem="fGQ-tH-0Kt" firstAttribute="top" secondItem="jcV-yP-7lj" secondAttribute="bottom" constant="330" id="hHI-xY-ix6"/>
+                            <constraint firstItem="Rgc-vj-Eq7" firstAttribute="trailing" secondItem="Kg1-eB-pKc" secondAttribute="trailing" constant="-9" id="jjv-E7-s3K"/>
+                            <constraint firstItem="Kg1-eB-pKc" firstAttribute="baseline" secondItem="jcV-yP-7lj" secondAttribute="baseline" id="lIb-Q3-wHr"/>
+                            <constraint firstItem="jcV-yP-7lj" firstAttribute="leading" secondItem="Ogp-24-Rq4" secondAttribute="trailing" constant="8" symbolic="YES" id="mWf-rw-lFt"/>
+                            <constraint firstItem="Ogp-24-Rq4" firstAttribute="leading" secondItem="T1L-lq-dQR" secondAttribute="leading" id="wsd-W2-Fl5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zgE-Iq-7fj"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MeU-le-UFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2271" y="671"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="k0S-r8-ma6">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NOl-BW-Wwp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="wM8-WM-vMN">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="FTe-xX-2zP" kind="relationship" relationship="viewControllers" id="cb6-9B-lAX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGv-pP-C04" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1543" y="671"/>
+        </scene>
+    </scenes>
 </document>
