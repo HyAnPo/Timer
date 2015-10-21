@@ -98,7 +98,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="startButtonPressed:" destination="Rb5-ej-vQ5" eventType="touchUpInside" id="9g1-cW-QNi"/>
+                                    <action selector="startButtonTapped:" destination="Rb5-ej-vQ5" eventType="touchUpInside" id="0gI-NH-OTI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01z-di-Vrk">
@@ -118,6 +118,7 @@
                                 <connections>
                                     <action selector="pauseButton:" destination="Rb5-ej-vQ5" eventType="touchUpInside" id="tHk-VY-oh6"/>
                                     <action selector="pauseButtonPressed:" destination="Rb5-ej-vQ5" eventType="touchUpInside" id="ljB-iZ-xLD"/>
+                                    <action selector="pauseButtonTapped:" destination="Rb5-ej-vQ5" eventType="touchUpInside" id="BtC-0t-ycY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer Countdown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6G-cn-uvv">
