@@ -10,6 +10,8 @@ import UIKit
 
 class Timer: NSObject {
     
+    static let kTimerAlert = "kTimerAlert"
+    static let kTotalSeconds = "kTotalSeconds"
     static let kTimerSecondTickNotification = "kTimerSecondTickNotification"
     static let kTimerCompleteNotification = "kTimerCompleteNotification"
     
@@ -73,13 +75,20 @@ NSNotificationCenter.defaultCenter().postNotificationName(Timer.kTimerSecondTick
         }
         
         var minutesString = ""
-        if minutes > 0 {
+        if minutes < 10 {
+            minutesString = "0\(minutes)"
+        } else if minutes > 0 {
             minutesString = "\(minutes)"
         }
         
         var secondsString = ""
-        if seconds > 0 {
+        if seconds < 10 {
+            secondsString = "0\(seconds)"
+        } else if seconds > 0 {
             secondsString = "\(seconds)"
+        }
+        if hours == 0 {
+            return "\(minutesString):\(secondsString)"
         }
         
         return "\(hoursString):\(minutesString):\(secondsString)"

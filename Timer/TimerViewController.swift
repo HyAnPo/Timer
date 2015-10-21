@@ -42,7 +42,7 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     @IBAction func startButtonTapped(sender: UIButton) {
-        
+        self.toggleTimer()
     }
     
     func toggleTimer() {
