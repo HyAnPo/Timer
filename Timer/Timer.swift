@@ -27,6 +27,8 @@ class Timer: NSObject {
             }
         }
     }
+    
+    private var localNotification: UILocalNotification?
 
 
     func setTime(seconds: NSTimeInterval, totalSeconds: NSTimeInterval) {
@@ -37,6 +39,7 @@ class Timer: NSObject {
     func startTimer() {
         if (timer == nil) {
             timer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(1.0), target: self, selector: "secondTick", userInfo: nil, repeats: true)
+            armNotification()
         }
         
     }
@@ -45,6 +48,9 @@ class Timer: NSObject {
         if timer != nil {
             timer?.invalidate()
             self.timer = nil
+            if let localNotification = localNotification {
+                UIApplication.sharedApplication().cancelLocalNotification(localNotification)
+            }
         }
     }
 
@@ -92,6 +98,25 @@ NSNotificationCenter.defaultCenter().postNotificationName(Timer.kTimerSecondTick
         }
         
         return "\(hoursString):\(minutesString):\(secondsString)"
+    }
+    
+    // TODO: fuzzy understanding of what is going on here
+    func armNotification () {
+        //makes new ins
+        let timerNotification = UILocalNotification()
+        let now = NSDate()
+        let fireDate = now.dateByAddingTimeInterval(seconds)
+        //sets the fire date
+        timerNotification.fireDate = fireDate
+        timerNotification.timeZone = NSTimeZone.localTimeZone()
+        timerNotification.soundName = "sms-received3.caf"
+        timerNotification.alertBody = "Timer Complete!"
+        timerNotification.category = Timer.kTimerAlert
+        timerNotification.userInfo = [Timer.kTotalSeconds : totalSeconds]
+        
+        localNotification = timerNotification
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(timerNotification)
     }
 
 }
