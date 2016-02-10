@@ -14,6 +14,8 @@
 		01A6AB6A1BD55B1800293874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6AB691BD55B1800293874 /* AppDelegate.swift */; };
 		01A6AB6C1BD55B4500293874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A6AB6B1BD55B4500293874 /* Main.storyboard */; };
 		822310931C6ABC7E000D820A /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822310921C6ABC7E000D820A /* TimerViewController.swift */; };
+		822310951C6AFE7A000D820A /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822310941C6AFE7A000D820A /* AlarmViewController.swift */; };
+		822310971C6B00BB000D820A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822310961C6B00BB000D820A /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		01A6AB691BD55B1800293874 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01A6AB6B1BD55B4500293874 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		822310921C6ABC7E000D820A /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		822310941C6AFE7A000D820A /* AlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		822310961C6B00BB000D820A /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				01A6AB691BD55B1800293874 /* AppDelegate.swift */,
 				01A6AB421BD55A8600293874 /* Assets.xcassets */,
 				01A6AB6B1BD55B4500293874 /* Main.storyboard */,
+				822310961C6B00BB000D820A /* Timer.swift */,
+				822310941C6AFE7A000D820A /* AlarmViewController.swift */,
 				822310921C6ABC7E000D820A /* TimerViewController.swift */,
 				01A6AB441BD55A8600293874 /* LaunchScreen.storyboard */,
 				01A6AB471BD55A8600293874 /* Info.plist */,
@@ -258,6 +264,8 @@
 			files = (
 				822310931C6ABC7E000D820A /* TimerViewController.swift in Sources */,
 				01A6AB6A1BD55B1800293874 /* AppDelegate.swift in Sources */,
+				822310951C6AFE7A000D820A /* AlarmViewController.swift in Sources */,
+				822310971C6B00BB000D820A /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
