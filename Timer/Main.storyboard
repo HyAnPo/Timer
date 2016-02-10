@@ -1,7 +1,164 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wYF-am-L4y">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Timer View Controller-->
+        <scene sceneID="i2k-mI-rsI">
+            <objects>
+                <viewController id="kGW-5R-KWK" customClass="TimerViewController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0MB-oX-MRB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fo3-RB-Gi8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1IQ-j7-X80">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="sWv-aB-tpt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n86-6Z-3cC">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="4"/>
+                                    </progressView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysl-vT-Q7K">
+                                        <rect key="frame" x="0.0" y="4" width="375" height="92"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="uV6-6k-rAe"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="uV6-6k-rAe"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wk-xb-F1d">
+                                        <rect key="frame" x="0.0" y="96" width="375" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="oAF-o6-7yj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ua-Sr-71B">
+                                        <rect key="frame" x="0.0" y="196" width="375" height="92"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhu-2U-uyo">
+                                        <rect key="frame" x="0.0" y="288" width="375" height="150"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RB-90-9ID">
+                                                <rect key="frame" x="0.0" y="0.0" width="25" height="150"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNi-9K-ukV">
+                                                <rect key="frame" x="25" y="0.0" width="150" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="kNi-9K-ukV" secondAttribute="height" multiplier="1:1" id="lyK-sc-nlk"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="38"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuO-1A-vaC">
+                                                <rect key="frame" x="175" y="0.0" width="25" height="150"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgX-ua-o2z">
+                                                <rect key="frame" x="200" y="0.0" width="150" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="OgX-ua-o2z" secondAttribute="height" multiplier="1:1" id="W4K-JK-eTn"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="38"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtO-Yn-aRr">
+                                                <rect key="frame" x="350" y="0.0" width="25" height="150"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="vuO-1A-vaC" firstAttribute="width" secondItem="9RB-90-9ID" secondAttribute="width" id="cYb-JA-Vnd"/>
+                                            <constraint firstItem="RtO-Yn-aRr" firstAttribute="width" secondItem="9RB-90-9ID" secondAttribute="width" id="d4e-fR-ZLY"/>
+                                            <constraint firstAttribute="height" constant="150" id="dlc-b1-Bag"/>
+                                            <constraint firstItem="RtO-Yn-aRr" firstAttribute="width" secondItem="9RB-90-9ID" secondAttribute="width" id="oKi-rJ-dr9"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="d4e-fR-ZLY"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rai-UW-WiT">
+                                        <rect key="frame" x="0.0" y="438" width="375" height="229"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sWv-aB-tpt" firstAttribute="top" secondItem="1IQ-j7-X80" secondAttribute="top" id="6ir-xf-8q1"/>
+                            <constraint firstAttribute="bottom" secondItem="sWv-aB-tpt" secondAttribute="bottom" id="ERe-9o-NN0"/>
+                            <constraint firstAttribute="trailing" secondItem="sWv-aB-tpt" secondAttribute="trailing" id="Z87-uM-wVl"/>
+                            <constraint firstItem="sWv-aB-tpt" firstAttribute="leading" secondItem="1IQ-j7-X80" secondAttribute="leading" id="jkT-by-Xkq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FN1-zL-oUs"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mWe-qK-wte" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876.5" y="686.5"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="DNG-Ck-94Q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xWB-YK-rX7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Wk6-Jk-mZy"/>
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c3Y-xB-Yoc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kGW-5R-KWK" kind="relationship" relationship="rootViewController" id="1b8-bS-36B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qEQ-3x-sb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449.5" y="686.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="IYI-Sc-Ouq">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wYF-am-L4y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="K1t-2D-yLA">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xWB-YK-rX7" kind="relationship" relationship="viewControllers" id="1Sx-su-uUQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJ5-Pi-JAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021" y="687"/>
+        </scene>
+    </scenes>
 </document>
