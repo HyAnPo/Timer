@@ -13,6 +13,7 @@
 		01A6AB5C1BD55A8600293874 /* TimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6AB5B1BD55A8600293874 /* TimerUITests.swift */; };
 		01A6AB6A1BD55B1800293874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6AB691BD55B1800293874 /* AppDelegate.swift */; };
 		01A6AB6C1BD55B4500293874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A6AB6B1BD55B4500293874 /* Main.storyboard */; };
+		248F966E1C6BEB8C0049C65F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248F966D1C6BEB8C0049C65F /* Enums.swift */; };
 		822310931C6ABC7E000D820A /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822310921C6ABC7E000D820A /* TimerViewController.swift */; };
 		822310951C6AFE7A000D820A /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822310941C6AFE7A000D820A /* AlarmViewController.swift */; };
 		822310971C6B00BB000D820A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822310961C6B00BB000D820A /* Timer.swift */; };
@@ -48,6 +49,7 @@
 		01A6AB5D1BD55A8600293874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01A6AB691BD55B1800293874 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01A6AB6B1BD55B4500293874 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		248F966D1C6BEB8C0049C65F /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		822310921C6ABC7E000D820A /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		822310941C6AFE7A000D820A /* AlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		822310961C6B00BB000D820A /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				822310961C6B00BB000D820A /* Timer.swift */,
 				822310941C6AFE7A000D820A /* AlarmViewController.swift */,
 				822310921C6ABC7E000D820A /* TimerViewController.swift */,
+				248F966D1C6BEB8C0049C65F /* Enums.swift */,
 				01A6AB441BD55A8600293874 /* LaunchScreen.storyboard */,
 				01A6AB471BD55A8600293874 /* Info.plist */,
 			);
@@ -264,6 +267,7 @@
 			files = (
 				822310931C6ABC7E000D820A /* TimerViewController.swift in Sources */,
 				01A6AB6A1BD55B1800293874 /* AppDelegate.swift in Sources */,
+				248F966E1C6BEB8C0049C65F /* Enums.swift in Sources */,
 				822310951C6AFE7A000D820A /* AlarmViewController.swift in Sources */,
 				822310971C6B00BB000D820A /* Timer.swift in Sources */,
 			);

@@ -19,11 +19,13 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
+    //MARK: - Variables
+    var timerState = TimerState.TimerOff
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,15 +39,7 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    //TODO: - Why won't a switch work here?
-//        switch pickerView {
-//        case pickerView === hoursPickerView:
-//            return 24
-//        case pickerView === minutesPickerView:
-//            return 60
-//        default:
-//            return 0
-//        }
+    
         if pickerView === hoursPickerView {
             return 24
         } else if pickerView === minutesPickerView {
@@ -60,9 +54,59 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         return String(row)
     }
     
+    //MARK: - Actions
     @IBAction func startButtonTapped(sender: UIButton) {
+        
+        let totalSeconds: Double = Double((hoursPickerView.selectedRowInComponent(0) * 3600) + (minutesPickerView.selectedRowInComponent(0) * 60))
+        print(totalSeconds)
+        
+        if timerState == .TimerOff {
+            updateView()
+            Timer.sharedInstance.setTimer(totalSeconds, totalSeconds: totalSeconds)
+            updateTimeLabel()
+            Timer.sharedInstance.startTimer()
+            listenForSecondTick()
+            
+            timerState = .TimerOn
+        } else if timerState == .TimerOn {
+            updateView()
+            Timer.sharedInstance.stopTimer()
+            timerState = .TimerOff
+        }
+        
+        
     }
     @IBAction func pauseButtonTapped(sender: UIButton) {
+        
+        Timer.sharedInstance.stopTimer()
+    }
+    
+    //MARK: - Functions
+    
+    func updateView() {
+        switch timerState {
+            
+        case .TimerOff:
+            timeLabel.hidden = false
+            pickerViewStackView.hidden = true
+            progressBar.hidden = false
+            startButton.setTitle("Cancel", forState: .Normal)
+            
+        case .TimerOn:
+            timeLabel.hidden = true
+            pickerViewStackView.hidden = false
+            progressBar.hidden = true
+            startButton.setTitle("Start", forState: .Normal)
+            
+        }
+    }
+    
+    func updateTimeLabel() {
+        timeLabel.text = Timer.sharedInstance.timerString()
+    }
+    
+    func listenForSecondTick() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTimeLabel", name: Timer.kSecondTick, object: nil)
     }
 }
 

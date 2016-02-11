@@ -18,13 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="deR-Yt-agD">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="deR-Yt-agD">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
                                     <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="a0T-xm-rHe">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
                                     </progressView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FK5-c8-8jJ">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FK5-c8-8jJ">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="220"/>
                                         <subviews>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-ua-Whp">
@@ -33,31 +33,31 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPu-Ze-SQC">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPu-Ze-SQC">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="220"/>
                                                 <subviews>
-                                                    <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ydz-Kk-Kzc">
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydz-Kk-Kzc">
                                                         <rect key="frame" x="0.0" y="0.0" width="259" height="220"/>
                                                         <connections>
                                                             <outlet property="dataSource" destination="zxc-1D-P4J" id="lae-nC-yjD"/>
                                                             <outlet property="delegate" destination="zxc-1D-P4J" id="0Wx-Tv-Zex"/>
                                                         </connections>
                                                     </pickerView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" misplaced="YES" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4E-Mi-a8A">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4E-Mi-a8A">
                                                         <rect key="frame" x="259" y="0.0" width="46" height="220"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ys-l6-kHJ">
-                                                        <rect key="frame" x="305" y="0.0" width="258" height="220"/>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ys-l6-kHJ">
+                                                        <rect key="frame" x="305" y="0.0" width="259" height="220"/>
                                                         <connections>
                                                             <outlet property="dataSource" destination="zxc-1D-P4J" id="eBq-BI-ktW"/>
                                                             <outlet property="delegate" destination="zxc-1D-P4J" id="ice-0e-oki"/>
                                                         </connections>
                                                     </pickerView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" misplaced="YES" text="Mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXP-Ta-RXw">
-                                                        <rect key="frame" x="563" y="0.0" width="37" height="220"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXP-Ta-RXw">
+                                                        <rect key="frame" x="564" y="0.0" width="37" height="220"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -81,7 +81,7 @@
                                             <constraint firstItem="NPu-Ze-SQC" firstAttribute="top" secondItem="FK5-c8-8jJ" secondAttribute="top" id="x0z-Vx-mpP"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U2S-hX-H9B">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2S-hX-H9B">
                                         <rect key="frame" x="0.0" y="220" width="600" height="100"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="kiL-Zr-g89">
@@ -95,7 +95,7 @@
                                                             <constraint firstAttribute="width" secondItem="lGO-cF-T09" secondAttribute="height" multiplier="1:1" id="GqI-4Y-VzL"/>
                                                             <constraint firstAttribute="height" priority="750" constant="50" id="V3I-7p-yEw"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" title="Start"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="50"/>
@@ -119,7 +119,7 @@
                                                             <constraint firstAttribute="height" priority="750" constant="50" id="mHA-5B-nsW"/>
                                                             <constraint firstAttribute="width" secondItem="pgt-dY-xwE" secondAttribute="height" multiplier="1:1" id="n8S-Zn-8oj"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" title="Pause"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="50"/>
@@ -132,7 +132,7 @@
                                                             </mask>
                                                         </variation>
                                                         <connections>
-                                                            <action selector="pauseButtonTapped:" destination="zxc-1D-P4J" eventType="touchUpInside" id="s5j-vp-lAO"/>
+                                                            <action selector="pauseButtonTapped:" destination="zxc-1D-P4J" eventType="touchUpInside" id="WvN-SJ-ecv"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -146,7 +146,7 @@
                                             <constraint firstItem="kiL-Zr-g89" firstAttribute="top" secondItem="U2S-hX-H9B" secondAttribute="top" id="ozh-08-bt5"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Xt-de-4co">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Xt-de-4co">
                                         <rect key="frame" x="0.0" y="320" width="600" height="167"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
